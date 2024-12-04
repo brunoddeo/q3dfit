@@ -390,6 +390,9 @@ def q3dcollect(q3di, cols=None, rows=None, quiet=True, compsortpar='sigma',
                         contcube['stel_z'][i, j] = q3do.zstar
                         if q3do.zstar_err is not None:
                             contcube['stel_z_err'][i, j, :] = q3do.zstar_err
+                else:
+                    contcube['all_mod'][i, j, q3do.fitran_indx] = \
+                            q3do.cont_fit
 
                 # continuum attenuation
                 if q3do.ct_ebv is not None:
